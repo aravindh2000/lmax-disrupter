@@ -1,0 +1,17 @@
+{
+  "class": "com.example.IntegerUtil",
+  "new_method": {
+    "name": "tryParseInt",
+    "params": [
+      {
+        "type": "java.lang.String"
+      }
+    ],
+    "return_type": "java.lang.Integer",
+    "body": "try {\n  return Integer.parseInt(param0);\n} catch (NumberFormatException e) {\n  return null;\n}"
+  },
+  "call_in_method": {
+    "target_method": "test_call",
+    "call": "Integer number = tryParseInt(\"123abc\");\nif (number == null) {\n  System.out.println(\"Parsing failed\");\n}"
+  }
+}
